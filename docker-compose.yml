@@ -15,6 +15,6 @@ services:
     volumes:
       - /home/ubuntu/Downloads/postgresdb/metabase/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER: postgres
-      - POSTGRES_PASSWORD: postgres
-      - POSTGRES_DB: metabase
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: metabase
