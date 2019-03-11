@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    links:
+      - db:db
+    depends_on:
+      - db
+  db:
+    image: postgres:9.6
+    ports:
+      - "5431:5432"
+    volumes:
+      - /home/ubuntu/Downloads/postgresdb/metabase/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER: postgres
+      - POSTGRES_PASSWORD: postgres
+      - POSTGRES_DB: metabase
